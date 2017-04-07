@@ -5,14 +5,7 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head><title>Login</title></h:head>
-<h:body>
-   <h:form>
-   <h:dataTable value="#{personBean.people}" var="person">
-      <h:column>#{person.name}</h:column>
-      <h:column>#{person.id}</h:column>
-      <h:column><h:commandButton value="Login" action="#{personBean.login()}"/></h:column>
-   </h:dataTable>
-   </h:form>
-</h:body>
+<f:view>
+    <h:outputLabel value="Hello, world"/>
+</f:view>
 </html>

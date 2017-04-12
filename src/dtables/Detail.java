@@ -21,16 +21,15 @@ public class Detail {
     }
 
     @Basic
-    private String Desc;
+    private String description;
 
-    public String getDesc() {
-        return Desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        Desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
-
 
     @ManyToOne(optional = false)
     private DetailType dtype;

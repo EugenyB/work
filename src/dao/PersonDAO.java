@@ -18,4 +18,8 @@ public class PersonDAO {
     public List<Person> findAll() {
         return em.createQuery("select p from Person p").getResultList();
     }
+
+    public Person find(int id) {
+        return em.find(Person.class, id);
+    }
 }

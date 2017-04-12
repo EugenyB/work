@@ -6,13 +6,19 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <h:head>
-    <title>Personal Page of #{personBean.current.name}</title>
+    <title>Scanners for #{personBean.current.name}</title>
+
 </h:head>
 <h:body>
-    <h:outputLabel value="Hello, #{personBean.current.name}!"/><br/>
-    <h:outputLink value="scanners.xhtml">Scanners</h:outputLink><br/>
-    <h:outputLink value="user.xhtml">User</h:outputLink><br/>
-    <h:outputLink value="storage.xhtml">Storage</h:outputLink><br/>
-    <h:outputLink value="plan.xhtml">Plan</h:outputLink><br/>
+    <h:dataTable value="#{HFWABean.HFWAs}" var="hfwa">
+        <h:column>
+            <f:facet name="header">id</f:facet>
+            #{hfwa.id}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Date</f:facet>
+            #{hfwa.dateassembly}
+        </h:column>
+    </h:dataTable>
 </h:body>
 </html>

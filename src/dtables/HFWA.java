@@ -1,9 +1,6 @@
 package dtables;
 
-import javax.persistence.Basic;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.sql.Date;
 import java.util.Collection;
 
@@ -11,6 +8,9 @@ import java.util.Collection;
  * Created by Vladimir on 27.02.2017.
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name = "HFWA.FindAll", query = "select h from HFWA h")
+})
 public class HFWA {
     @Id
     private int id;

@@ -8,11 +8,11 @@
 <h:head><title>Login</title></h:head>
 <h:body>
    <h:form>
-   <h:dataTable value="#{personBean.people}" var="person">
-      <h:column>#{person.name}</h:column>
-      <h:column>#{person.id}</h:column>
-      <h:column><h:commandButton value="Login" action="#{personBean.login()}"/></h:column>
-   </h:dataTable>
+   <h:outputLabel for="login" value="Login:" />
+      <h:inputText value="#{personBean.current.id}" id="login"/>
+      <h:outputLabel for="password" value="Password:" />
+      <h:inputSecret value="#{personBean.current.passwd}" id="password" />
+      <h:commandButton value="Start" action="#{personBean.login}" />
    </h:form>
 </h:body>
 </html>

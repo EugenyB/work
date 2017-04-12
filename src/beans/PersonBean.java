@@ -20,7 +20,7 @@ public class PersonBean implements Serializable{
     @EJB
     PersonDAO personDAO;
 
-    private Person current;
+    private Person current = new Person();
 
     public Person getCurrent() {
         return current;
@@ -36,6 +36,16 @@ public class PersonBean implements Serializable{
     }
 
     public String login() {
-        return "success";
+        int id = current.getId();
+        Person p = personDAO.find(id);
+        if (p == null) {
+            return "error";
+        }
+        if (p.getPasswd().equals(current.getPasswd())) {
+            current = p;
+            return "success";
+        } else {
+            return "error";
+        }
     }
 }

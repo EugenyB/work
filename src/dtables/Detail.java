@@ -8,7 +8,7 @@ import java.util.Collection;
  */
 @Entity
 public class Detail {
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     private int id;
 

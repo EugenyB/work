@@ -1,8 +1,9 @@
 package beans;
 
 
-import dao.HFWADAO;
-import dtables.HFWA;
+import dao.PersonDAO;
+import dao.ScannerDAO;
+import dtables.Scanner;
 
 import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
@@ -15,10 +16,12 @@ import java.util.List;
  */
 @Named
 @SessionScoped
-public class HFWABean implements Serializable {
+public class ScannerBean implements Serializable {
     @EJB
-    HFWADAO hfwadao;
-    public List<HFWA> getHFWAs (){
+    ScannerDAO hfwadao;
+
+    public List<Scanner> getHFWAs (){
         return hfwadao.findAll();
     }
+
 }

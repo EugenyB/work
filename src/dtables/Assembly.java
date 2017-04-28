@@ -4,7 +4,6 @@ import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.sql.Date;
 import java.time.LocalDateTime;
 
 /**
@@ -46,14 +45,14 @@ public class Assembly {
     }
 
     @ManyToOne(optional = false)
-    private HFWA hfwa;
+    private Scanner scanner;
 
-    public HFWA getHfwa() {
-        return hfwa;
+    public Scanner getScanner() {
+        return scanner;
     }
 
-    public void setHfwa(HFWA hfwa) {
-        this.hfwa = hfwa;
+    public void setScanner(Scanner scanner) {
+        this.scanner = scanner;
     }
 
     @Basic

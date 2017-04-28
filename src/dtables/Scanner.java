@@ -7,11 +7,8 @@ import java.util.Collection;
 /**
  * Created by Vladimir on 27.02.2017.
  */
-@Entity
-@NamedQueries({
-    @NamedQuery(name = "HFWA.FindAll", query = "select h from HFWA h")
-})
-public class HFWA {
+@Entity(name = "hfwa")
+public class Scanner {
     @Id
     private int id;
 
@@ -34,7 +31,7 @@ public class HFWA {
         this.dateassembly = dateassembly;
     }
 
-    @OneToMany(mappedBy = "hfwa")
+    @OneToMany(mappedBy = "scanner")
     private Collection<Assembly> assemblies;
 
     public Collection<Assembly> getAssemblies() {
@@ -43,5 +40,16 @@ public class HFWA {
 
     public void setAssemblies(Collection<Assembly> assemblies) {
         this.assemblies = assemblies;
+    }
+
+    @ManyToOne(optional = false)
+    private Person lastPerson;
+
+    public Person getLastPerson() {
+        return lastPerson;
+    }
+
+    public void setLastPerson(Person lastPerson) {
+        this.lastPerson = lastPerson;
     }
 }

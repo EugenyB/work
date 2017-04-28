@@ -8,7 +8,6 @@ import java.util.Collection;
  */
 @Entity
 public class DetailType {
-    @GeneratedValue
     @Id
     private int id;
 

@@ -5,12 +5,10 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<h:head>
-    <title>Scanners for #{personBean.current.name}</title>
-
-</h:head>
+<h:head><title>User</title></h:head>
 <h:body>
-    <h:dataTable value="#{scannerBean.HFWAs}" var="scanner">
+    <h1>Scanners by #{personBean.current}</h1>
+    <h:dataTable value="#{personBean.current.lastScanners}" var="scanner">
         <h:column>
             <f:facet name="header">id</f:facet>
             #{scanner.id}
@@ -18,10 +16,6 @@
         <h:column>
             <f:facet name="header">Date</f:facet>
             #{scanner.dateassembly}
-        </h:column>
-        <h:column>
-            <f:facet name="header">User</f:facet>
-            #{scanner.lastPerson}
         </h:column>
     </h:dataTable>
 </h:body>

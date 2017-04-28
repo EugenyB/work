@@ -52,4 +52,20 @@ public class Person {
     public void setAssemblies(Collection<Assembly> asseblys) {
         this.assemblies = asseblys;
     }
+
+    @OneToMany(mappedBy = "lastPerson")
+    private Collection<Scanner> lastScanners;
+
+    public Collection<Scanner> getLastScanners() {
+        return lastScanners;
+    }
+
+    public void setLastScanners(Collection<Scanner> lastScanners) {
+        this.lastScanners = lastScanners;
+    }
+
+    @Override
+    public String toString() {
+        return name+"("+id+")";
+    }
 }
